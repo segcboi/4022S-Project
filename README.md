@@ -8,10 +8,6 @@
 
 A 4-DOF dual-arm kinetic sculpture that tracks a performer without wearable markers and translates human movement into fluid robotic choreography in real time.
 
-<p align="center">
-  <img src="media/demo.gif" alt="Kinetic Sculpture Demo" width="62%" />
-  <img src="media/mobile_ui.jpg" alt="ESP32 Mobile Controller" width="32%" />
-</p>
 
 ## System Overview
 * **Vision Host (`30.4 FPS`):** OpenCV (1-frame buffer) + MediaPipe BlazePose extract 12 normalised 2D upper-body landmarks and stream them via non-blocking **UDP (`Port 5005`)**.
