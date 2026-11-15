@@ -15,12 +15,10 @@ A 4-DOF dual-arm kinetic sculpture that tracks a performer without wearable mark
 * **Virtual Damping Control:** A **`15 µs` (`2.0°`) deadband** rejects optical jitter, while an Exponential Moving Average filter ($y[n] = 0.04\,x[n] + 0.96\,y[n-1]$, transfer function $H(s) = \frac{1}{0.48s + 1}$) turns rigid hobby servos into smooth, weighted motion.
 
 ## Choreographic Modes & Web Dashboard
-Controlled wirelessly via the ESP32 web UI (`http://<ESP32_IP>`), a pushbutton on `GPIO 4`, or Serial (`'m'`):
+Controlled wirelessly via the ESP32 web UI (`http://172.20.10.3`)
 1. **Inverted Mirror (`SPACE: DIRECT`):** `1:1` right-arm mirroring with synchronous chiral inversion on the left arm.
 2. **Temporal Echo (`SPACE: INVERTED`):** Left arm trails the leader by `~250–300 ms` (`12` frames) via a `30`-frame circular ring buffer into negative space.
 3. **Harmonic Flux (`FLOW: FREE / BOUND`):** Maps human wrist/elbow velocity and gesture span to modulate multi-harmonic wave frequency (`0.55×–2.50×`) and amplitude.
-
-**HTTP Endpoints:** `GET /` (dashboard UI) · `GET /status` (live JSON pulse widths) · `GET /setMode?m={0|1|2}`
 
 ## Hardware & Pinout
 * **Mechanics:** Dual 2-DOF planar 3D-printed PLA arms (`200 mm` links, `400 mm` radial reach, pivot bearings) driven by `4× DS3240` servos (`500–2500 µs`).
